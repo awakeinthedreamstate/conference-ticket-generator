@@ -1,0 +1,20 @@
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+.formHeader * {
+  margin: 0;
+  text-align: center;
+}
+.formHeader h1 {
+  white-space: pre-line;
+  font-weight: 800;
+  width: 100%;
+}
+.formHeader p {
+  font-weight: 600;
+  font-size: 0.8rem;
+}/*# sourceMappingURL=formheader.module.css.map */

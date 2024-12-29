@@ -1,0 +1,17 @@
+.appTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+.appTitle img {
+  width: 20px;
+}
+.appTitle span {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}/*# sourceMappingURL=apptitle.module.css.map */
