@@ -94,3 +94,8 @@ textarea:not([rows]) {
 .App * {
   border: 1px solid black;
 }
+
+/* Remove seemingly default margin from all <p> elements */
+p {
+  margin: 0;
+}
