@@ -1,3 +1,84 @@
-.alert {
-  color: red;
+.alert,
+i {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  font-size: 0.6rem;
+  gap: 0.3rem;
+  margin-left: 0.2rem;
+  color: purple;
+}
+
+#avatarUploadArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 7rem;
+}
+#avatarUploadArea input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+#avatarUploadArea #noAvatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+#avatarUploadArea #noAvatar p {
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+#avatarUploadArea #noAvatar img {
+  padding: 0.3rem;
+  border: 1px solid hsl(252, 6%, 83%);
+  border-radius: 10px;
+}
+#avatarUploadArea #yesAvatar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 3rem 1.3rem;
+  row-gap: 1rem;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  grid-template-areas: "img img" "button1 button2";
+}
+#avatarUploadArea #yesAvatar img {
+  grid-area: img;
+  width: 3rem;
+  height: 3rem;
+  justify-self: center;
+  border: 1px solid hsl(252, 6%, 83%);
+  border-radius: 10px;
+}
+#avatarUploadArea #yesAvatar button {
+  height: 1rem;
+  grid-area: button2;
+  font-size: 0.8rem;
+  background-color: hsl(252, 6%, 83%);
+  border: none;
+  border-radius: 2px;
+  padding-bottom: 1.1rem;
+  color: white;
+  cursor: pointer;
+}
+#avatarUploadArea #yesAvatar button:hover #avatarUploadArea #yesAvatar button:focus {
+  text-decoration: underline;
+}
+#avatarUploadArea #yesAvatar button:first-of-type {
+  grid-area: button1;
+}
+#avatarUploadArea #yesAvatar button:last-of-type {
+  grid-area: button2;
 }/*# sourceMappingURL=uploadavatar.module.css.map */

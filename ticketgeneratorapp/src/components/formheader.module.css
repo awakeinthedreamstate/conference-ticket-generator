@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  width: 100%;
 }
 .formHeader * {
   margin: 0;
@@ -13,8 +13,9 @@
   white-space: pre-line;
   font-weight: 800;
   width: 100%;
+  font-size: 2.5rem;
 }
 .formHeader p {
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }/*# sourceMappingURL=formheader.module.css.map */

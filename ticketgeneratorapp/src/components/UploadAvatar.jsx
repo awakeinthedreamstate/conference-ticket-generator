@@ -33,44 +33,49 @@ export default function UploadAvatar() {
     console.log("onChange triggered");
   }
 
-  function handleRemoveImage() {
+  function handleRemoveAvatar() {
     setImage(null);
     setAlertMessage(DEFAULT_ALERT);
     avatarUploadInputRef.current.value = "";
+    console.log("remove image triggered");
   }
 
   return (
     <div id="uploadSection">
       <p>Upload Avatar</p>
-      <div id="avatarUploadArea">
+      <div id={styles.avatarUploadArea}>
         <input
           type="file"
-          id="avatar"
           name="avatar"
           accept="image/*"
           onChange={handleAvatarUpload}
+          style={image ? { zIndex: -1 } : { zIndex: 2 }}
           ref={avatarUploadInputRef}
         />
         {!image ? (
-          <div>
+          <div id={styles.noAvatar}>
             <img src="/assets/images/icon-upload.svg" alt="upload icon" />
             <p>Drag and drop or click to upload</p>
           </div>
         ) : (
-          <div>
+          <div id={styles.yesAvatar}>
             <img src={image} alt="user avatar" />
             <button
+              type="button"
               onClick={() => {
-                handleRemoveImage;
+                handleRemoveAvatar();
               }}
             >
-              Remove Image
+              Remove image
             </button>
             <button
               type="button"
-              onClick={() => avatarUploadInputRef.current.click()}
+              onClick={() => {
+                avatarUploadInputRef.current.click();
+                console.log("image changed");
+              }}
             >
-              Change Image
+              Change image
             </button>
           </div>
         )}
