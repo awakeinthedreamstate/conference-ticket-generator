@@ -1,6 +1,5 @@
 import { useReducer, useRef, useState } from "react";
 import styles from "./uploadavatar.module.css";
-
 export default function UploadAvatar() {
   const MAX_FILE_SIZE = 500 * 1024;
   const DEFAULT_ALERT = "Upload your photo (JPG or PNG, max size: 500KB).";
@@ -37,11 +36,10 @@ export default function UploadAvatar() {
     setImage(null);
     setAlertMessage(DEFAULT_ALERT);
     avatarUploadInputRef.current.value = "";
-    console.log("remove image triggered");
   }
 
   return (
-    <div id="uploadSection">
+    <div id={styles.uploadSection}>
       <p>Upload Avatar</p>
       <div id={styles.avatarUploadArea}>
         <input

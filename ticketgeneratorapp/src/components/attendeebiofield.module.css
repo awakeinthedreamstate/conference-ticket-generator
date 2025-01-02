@@ -1,0 +1,39 @@
+.alert,
+i {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  font-size: 0.6rem;
+  font-weight: 300;
+  gap: 0.3rem;
+  color: white;
+  margin: 0;
+}
+
+input {
+  margin: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0.2rem;
+}
+.field p:first-of-type {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.icons {
+  margin-left: 0;
+}
+
+/* span that holds the space an alert p would've taken */
+.spaceholder {
+  width: 11.75rem;
+  height: 1.125rem;
+}/*# sourceMappingURL=attendeebiofield.module.css.map */

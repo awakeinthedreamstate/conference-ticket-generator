@@ -92,7 +92,7 @@ textarea:not([rows]) {
 /* Border around all divs to aid build */
 
 .App * {
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 /* Remove seemingly default margin from all <p> elements */

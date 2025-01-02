@@ -5,9 +5,16 @@ i {
   justify-content: start;
   align-items: center;
   font-size: 0.6rem;
+  font-weight: 300;
   gap: 0.3rem;
   margin-left: 0.2rem;
-  color: purple;
+  color: white;
+}
+
+#uploadSection p:first-of-type {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: white;
 }
 
 #avatarUploadArea {
@@ -42,8 +49,9 @@ i {
 }
 #avatarUploadArea #noAvatar img {
   padding: 0.3rem;
-  border: 1px solid hsl(252, 6%, 83%);
+  border: 1px solid hsl(from hsl(252, 6%, 83%) h s l/60%);
   border-radius: 10px;
+  background-color: hsl(from hsl(252, 6%, 83%) h s l/30%);
 }
 #avatarUploadArea #yesAvatar {
   display: grid;
@@ -66,14 +74,14 @@ i {
   height: 1rem;
   grid-area: button2;
   font-size: 0.8rem;
-  background-color: hsl(252, 6%, 83%);
+  background-color: hsl(from hsl(252, 6%, 83%) h s l/60%);
   border: none;
   border-radius: 2px;
   padding-bottom: 1.1rem;
   color: white;
   cursor: pointer;
 }
-#avatarUploadArea #yesAvatar button:hover #avatarUploadArea #yesAvatar button:focus {
+#avatarUploadArea #yesAvatar button:hover {
   text-decoration: underline;
 }
 #avatarUploadArea #yesAvatar button:first-of-type {
