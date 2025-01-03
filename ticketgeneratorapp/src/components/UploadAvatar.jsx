@@ -5,6 +5,7 @@ export default function UploadAvatar() {
   const DEFAULT_ALERT = "Upload your photo (JPG or PNG, max size: 500KB).";
   const [image, setImage] = useState(null);
   const [alertMessage, setAlertMessage] = useState(DEFAULT_ALERT);
+  const [errorState, setErrorState] = useState(false);
   const avatarUploadInputRef = useRef(null);
 
   function handleAvatarUpload(e) {
@@ -17,11 +18,13 @@ export default function UploadAvatar() {
     if (!avatar.type.startsWith("image/")) {
       setImage(null);
       setAlertMessage("The uploaded file is not an image.");
+      setErrorState(true);
       return;
     }
     if (avatar.size > MAX_FILE_SIZE) {
       setImage(null);
       setAlertMessage("File too large. Please upload a photo under 500KB.");
+      setErrorState(true);
       return;
     }
     reader.onloadend = () => {
@@ -29,7 +32,7 @@ export default function UploadAvatar() {
     };
     reader.readAsDataURL(avatar);
     setAlertMessage(avatar.name);
-    console.log("onChange triggered");
+    setErrorState(false);
   }
 
   function handleRemoveAvatar() {
@@ -78,7 +81,7 @@ export default function UploadAvatar() {
           </div>
         )}
       </div>
-      <p className={styles.alert}>
+      <p className={errorState ? styles.errorState : styles.alert}>
         <i>
           <svg
             xmlns="http://www.w3.org/2000/svg"

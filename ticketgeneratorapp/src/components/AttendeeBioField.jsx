@@ -1,11 +1,12 @@
-import "./attendeebiofield.module.css";
 import styles from "./attendeebiofield.module.css";
 
-export default function AttendeeBioField() {
-  const alertMessage = {
+export default function AttendeeBioField({ register, errors }) {
+  const ALERT_MESSAGE = {
     name: "Please enter your full name",
     email: "Please enter a valid email address",
+    github: "Please enter your Github username",
   };
+  const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
   const ICON_SVG = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -34,27 +35,62 @@ export default function AttendeeBioField() {
     <div>
       <div id="fullName" className={styles.field}>
         <p>Full Name</p>
-        <input type="text" name="fullName" required />
-        {/* {(invalidField && (
+        <input
+          {...register("fullName", { required: ALERT_MESSAGE.name })}
+          type="text"
+        />
+        {errors.fullName && (
           <p className={styles.alert}>
             <i className={styles.icons}>{ICON_SVG}</i>
-            <span>{alertMessage.name}</span>
+            <span>{errors.fullName.message}</span>
           </p>
-        )) ||
-          null} */}
+        )}
       </div>
       <div id="email" className={styles.field}>
         <p>Email Address</p>
-        <input type="email" name="email" required />
-        <p className={styles.alert}>
-          <i className={styles.icons}>{ICON_SVG}</i>
-          <span>{alertMessage.email}</span>
-        </p>
+        <input
+          type="text"
+          {...register("email", {
+            required: ALERT_MESSAGE.email,
+            validate: (value) => {
+              if (!value.includes("@")) {
+                return "Email must include @";
+              }
+              if (!emailRegex.test(value)) {
+                return "Please enter a valid email address";
+              }
+              return true;
+            },
+            // pattern: {
+            //   value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+            //   message: "Please enter a valid email address",
+            // },
+          })}
+          placeholder="example@email.com"
+        />
+        {errors.email && (
+          <p className={styles.alert}>
+            <i className={styles.icons}>{ICON_SVG}</i>
+            <span>{errors.email.message}</span>
+          </p>
+        )}
       </div>
-      <div className={styles.field}>
+      <div id="github" className={styles.field}>
         <p>Github Username</p>
-        <input type="text" name="github" />
-        <span className={styles.spaceholder}></span>
+        <input
+          {...register("github", {
+            required: ALERT_MESSAGE.github,
+            pattern: { value: /^@.+/, message: "username must start with @" },
+          })}
+          type="text"
+          placeholder="@githubusername"
+        />
+        {errors.github && (
+          <p className={styles.alert}>
+            <i className={styles.icons}>{ICON_SVG}</i>
+            <span>{errors.github.message}</span>
+          </p>
+        )}
       </div>
     </div>
   );
