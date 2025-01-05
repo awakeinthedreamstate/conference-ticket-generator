@@ -44,7 +44,12 @@ export default function UploadAvatar() {
   return (
     <div id={styles.uploadSection}>
       <p>Upload Avatar</p>
-      <div id={styles.avatarUploadArea}>
+      <div
+        id={styles.avatarUploadArea}
+        className={
+          errorState ? styles.uploadAreaInvalidHalo : styles.uploadAreaValidHalo
+        }
+      >
         <input
           type="file"
           name="avatar"
@@ -73,7 +78,6 @@ export default function UploadAvatar() {
               type="button"
               onClick={() => {
                 avatarUploadInputRef.current.click();
-                console.log("image changed");
               }}
             >
               Change image

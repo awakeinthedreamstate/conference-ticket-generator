@@ -11,6 +11,10 @@
   font-size: 1rem;
   font-weight: 800;
 }
+#ticketForm button:focus {
+  outline: none;
+  box-shadow: 0 0 5px 1px white;
+}
 
 #form {
   display: flex;

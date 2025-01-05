@@ -14,8 +14,9 @@ body {
     url("/assets/images/pattern-lines.svg"),
     url("/assets/images/background-desktop.png");
   background-size: 12% auto, 12% auto, 40% auto, 30% auto, contain, cover;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-position: 5% -10%, 69% 45%, bottom left, 100% 10%, top center,
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x,
+    no-repeat;
+  background-position: 5% -10%, 69% 55%, bottom left, 100% 10%, top center,
     top center;
 
   margin: 0;
@@ -31,7 +32,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .container {

@@ -38,6 +38,7 @@ export default function AttendeeBioField({ register, errors }) {
         <input
           {...register("fullName", { required: ALERT_MESSAGE.name })}
           type="text"
+          className={errors.fullName && styles.invalidInput}
         />
         {errors.fullName && (
           <p className={styles.alert}>
@@ -63,6 +64,7 @@ export default function AttendeeBioField({ register, errors }) {
             },
           })}
           placeholder="example@email.com"
+          className={errors.email && styles.invalidInput}
         />
         {errors.email && (
           <p className={styles.alert}>
@@ -80,6 +82,7 @@ export default function AttendeeBioField({ register, errors }) {
           })}
           type="text"
           placeholder="@yourusername"
+          className={errors.github && styles.invalidInput}
         />
         {errors.github && (
           <p className={styles.alert}>

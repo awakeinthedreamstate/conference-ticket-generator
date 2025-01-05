@@ -16,8 +16,8 @@ i {
   font-size: 0.6rem;
   font-weight: 300;
   gap: 0.3rem;
-  color: white;
   margin: 0;
+  animation: alertColor 0.5s ease-out;
 }
 
 input {
@@ -46,6 +46,14 @@ input {
   padding-left: 0.5rem;
   color: white;
 }
+.field input:focus {
+  outline: none;
+  box-shadow: 0 0 5px 1px white;
+}
+.field .invalidInput:focus {
+  outline: none;
+  box-shadow: 0 0 5px 1px red;
+}
 
 .icons {
   margin-left: 0;
@@ -56,4 +64,13 @@ input {
 .spaceholder {
   width: 11.75rem;
   height: 1.125rem;
+}
+
+@keyframes alertColor {
+  0% {
+    color: red;
+  }
+  100% {
+    color: white;
+  }
 }/*# sourceMappingURL=attendeebiofield.module.css.map */
