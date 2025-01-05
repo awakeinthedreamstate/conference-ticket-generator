@@ -9,7 +9,10 @@
   color: white;
 }
 .alert i {
-  display: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
   color: inherit;
 }
 
@@ -28,6 +31,19 @@
   color: inherit;
 }
 
+#avatarUploadArea {
+  border: 1px dashed hsl(from hsl(252, 6%, 83%) h s l/60%);
+  background-color: hsl(from hsl(252, 6%, 83%) h s l/15%);
+  border-radius: 10px;
+}
+
+#uploadSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0.3rem;
+}
 #uploadSection p:first-of-type {
   font-weight: 500;
   font-size: 0.8rem;
@@ -91,6 +107,7 @@
   height: 1rem;
   grid-area: button2;
   font-size: 0.8rem;
+  font-weight: 500;
   background-color: hsl(from hsl(252, 6%, 83%) h s l/60%);
   border: none;
   border-radius: 2px;

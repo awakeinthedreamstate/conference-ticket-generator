@@ -15,11 +15,11 @@ export default function TicketForm() {
   }
   return (
     <div id={styles.ticketForm}>
-      <form id="attendeeForm" onSubmit={handleSubmit(onSubmit)}>
+      <form id={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <UploadAvatar />
         <AttendeeBioField register={register} errors={errors} />
         <div id={styles.submitButton}>
-          <button type="submit">Generate Ticket</button>
+          <button type="submit">Generate My Ticket</button>
         </div>
       </form>
     </div>

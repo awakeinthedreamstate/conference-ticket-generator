@@ -2,9 +2,9 @@ import styles from "./attendeebiofield.module.css";
 
 export default function AttendeeBioField({ register, errors }) {
   const ALERT_MESSAGE = {
-    name: "Please enter your full name",
-    email: "Please enter a valid email address",
-    github: "Please enter your Github username",
+    name: "Please enter your full name.",
+    email: "Please enter a valid email address.",
+    github: "Please enter your Github username.",
   };
   const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
   const ICON_SVG = (
@@ -32,7 +32,7 @@ export default function AttendeeBioField({ register, errors }) {
   );
 
   return (
-    <div>
+    <div className={styles.attendeeBio}>
       <div id="fullName" className={styles.field}>
         <p>Full Name</p>
         <input
@@ -61,10 +61,6 @@ export default function AttendeeBioField({ register, errors }) {
               }
               return true;
             },
-            // pattern: {
-            //   value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-            //   message: "Please enter a valid email address",
-            // },
           })}
           placeholder="example@email.com"
         />
@@ -83,7 +79,7 @@ export default function AttendeeBioField({ register, errors }) {
             pattern: { value: /^@.+/, message: "username must start with @" },
           })}
           type="text"
-          placeholder="@githubusername"
+          placeholder="@yourusername"
         />
         {errors.github && (
           <p className={styles.alert}>

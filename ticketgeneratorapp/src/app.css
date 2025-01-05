@@ -7,16 +7,20 @@
 }
 
 body {
-  background-image: url("/assets/images/pattern-squiggly-line-bottom.svg"),
+  background-image: url("/assets/images/pattern-circle.svg"),
+    url("/assets/images/pattern-circle.svg"),
+    url("/assets/images/pattern-squiggly-line-bottom.svg"),
     url("/assets/images/pattern-squiggly-line-top.svg"),
     url("/assets/images/pattern-lines.svg"),
     url("/assets/images/background-desktop.png");
-  background-size: 40% auto, 30% auto, contain, cover;
-  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
-  background-position: bottom left, 100% 10%, top center, top center;
+  background-size: 12% auto, 12% auto, 40% auto, 30% auto, contain, cover;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 5% -10%, 69% 45%, bottom left, 100% 10%, top center,
+    top center;
 
   margin: 0;
   color: white;
+  padding-bottom: 5rem;
 }
 
 .App {
@@ -26,6 +30,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
+  padding-top: 2rem;
 }
 
 .container {
@@ -39,6 +45,7 @@ body {
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  gap: 0.5rem;
 }
 
 i {
