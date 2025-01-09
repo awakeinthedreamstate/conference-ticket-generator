@@ -1,9 +1,12 @@
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
 import AttendeeBioField from "./AttendeeBioField";
 import UploadAvatar from "./UploadAvatar";
 import styles from "./ticketform.module.css";
+import { TicketContext } from "../context/TicketContext";
 
 export default function TicketForm() {
+  const { attendeeBio, setAttendeeBio } = useContext(TicketContext);
   const {
     register,
     handleSubmit,
@@ -11,7 +14,14 @@ export default function TicketForm() {
   } = useForm();
 
   function onSubmit(data) {
-    console.log(data);
+    const { fullName, email, github } = data;
+    setAttendeeBio({
+      ...attendeeBio,
+      name: fullName,
+      email: email,
+      github: github,
+    });
+    console.log(attendeeBio);
   }
   return (
     <div id={styles.ticketForm}>

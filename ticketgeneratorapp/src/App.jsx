@@ -5,9 +5,10 @@ import MainContainer from "./components/MainContainer";
 import FormHeader from "./components/FormHeader";
 import { TicketContextProvider } from "./context/TicketContext";
 import TicketForm from "./components/TicketForm";
+import TicketCard from "./components/TicketCard";
 
 function App() {
-  const [isTicketGenerated, setIsTicketGenerated] = useState(false);
+  const [isTicketGenerated, setIsTicketGenerated] = useState(true);
 
   return (
     <div className="App">

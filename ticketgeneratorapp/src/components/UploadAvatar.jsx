@@ -1,9 +1,11 @@
-import { useReducer, useRef, useState } from "react";
+import { useReducer, useRef, useState, useContext } from "react";
 import styles from "./uploadavatar.module.css";
+import { TicketContext } from "../context/TicketContext";
+
 export default function UploadAvatar() {
   const MAX_FILE_SIZE = 500 * 1024;
   const DEFAULT_ALERT = "Upload your photo (JPG or PNG, max size: 500KB).";
-  const [image, setImage] = useState(null);
+  const { attendeeBio, setAttendeeBio } = useContext(TicketContext);
   const [alertMessage, setAlertMessage] = useState(DEFAULT_ALERT);
   const [errorState, setErrorState] = useState(false);
   const avatarUploadInputRef = useRef(null);
@@ -12,23 +14,23 @@ export default function UploadAvatar() {
     const avatar = e.target.files[0];
     const reader = new FileReader();
     if (!avatar) {
-      setImage(null);
+      setAttendeeBio(...attendeeBio, { avatar: null });
       return;
     }
     if (!avatar.type.startsWith("image/")) {
-      setImage(null);
+      setAttendeeBio(...attendeeBio, { avatar: null });
       setAlertMessage("The uploaded file is not an image.");
       setErrorState(true);
       return;
     }
     if (avatar.size > MAX_FILE_SIZE) {
-      setImage(null);
+      setAttendeeBio(...attendeeBio, { avatar: null });
       setAlertMessage("File too large. Please upload a photo under 500KB.");
       setErrorState(true);
       return;
     }
     reader.onloadend = () => {
-      setImage(reader.result);
+      setAttendeeBio({ ...attendeeBio, avatar: reader.result });
     };
     reader.readAsDataURL(avatar);
     setAlertMessage(avatar.name);
@@ -36,7 +38,7 @@ export default function UploadAvatar() {
   }
 
   function handleRemoveAvatar() {
-    setImage(null);
+    setAttendeeBio({ ...attendeeBio, avatar: null });
     setAlertMessage(DEFAULT_ALERT);
     avatarUploadInputRef.current.value = "";
   }
@@ -55,17 +57,17 @@ export default function UploadAvatar() {
           name="avatar"
           accept="image/*"
           onChange={handleAvatarUpload}
-          style={image ? { zIndex: -1 } : { zIndex: 2 }}
+          style={attendeeBio.avatar ? { zIndex: -1 } : { zIndex: 2 }}
           ref={avatarUploadInputRef}
         />
-        {!image ? (
+        {!attendeeBio.avatar ? (
           <div id={styles.noAvatar}>
             <img src="/assets/images/icon-upload.svg" alt="upload icon" />
             <p>Drag and drop or click to upload</p>
           </div>
         ) : (
           <div id={styles.yesAvatar}>
-            <img src={image} alt="user avatar" />
+            <img src={attendeeBio.avatar} alt="user avatar" />
             <button
               type="button"
               onClick={() => {

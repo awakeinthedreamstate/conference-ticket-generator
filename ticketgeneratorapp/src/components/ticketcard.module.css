@@ -1,0 +1,10 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: auto;
+  align-items: center;
+  margin-top: 13rem;
+}/*# sourceMappingURL=ticketcard.module.css.map */

@@ -1,22 +1,68 @@
-.formHeader {
+.formHeaderNoTicket {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0;
+  gap: 1.5rem;
   width: 100%;
 }
-.formHeader * {
+.formHeaderNoTicket * {
   margin: 0;
   text-align: center;
 }
-.formHeader h1 {
+.formHeaderNoTicket h1 {
   white-space: pre-line;
   font-weight: 800;
   width: 100%;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
-.formHeader p {
+.formHeaderNoTicket p {
+  white-space: pre-line;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 1.5rem;
+}
+
+.formHeaderTicket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+.formHeaderTicket * {
+  margin: 0;
+  text-align: center;
+}
+.formHeaderTicket h1 {
+  white-space: pre-line;
+  font-weight: 800;
+  width: 100%;
+  animation: headerTween 0.3s linear 0.1s 1 forwards;
+}
+.formHeaderTicket p {
+  white-space: pre-line;
+  font-weight: 300;
+  animation: subHeaderTween 0.3s linear 0.1s 1 forwards;
+}
+
+@keyframes headerTween {
+  0% {
+    transform: translateY(0);
+    font-size: 2.5rem;
+  }
+  100% {
+    transform: translateY(20%);
+    font-size: 3.5rem;
+  }
+}
+@keyframes subHeaderTween {
+  0% {
+    transform: translateY(0);
+    font-size: 1rem;
+  }
+  100% {
+    transform: translateY(25%);
+    font-size: 1.5rem;
+  }
 }/*# sourceMappingURL=formheader.module.css.map */
