@@ -10,20 +10,31 @@ export default function FormHeader({ isTicketGenerated }) {
   };
   const subTextTemplates = {
     welcomeText: "Secure your spot at next year's biggest coding conference.",
-    ticketedText:
-      "We've emailed your ticket to\nyour email and will send updates in\nthe run up to the event.",
+    ticketedText: `We've emailed your ticket to\n<span>${attendeeBio.email}</span> and will send updates in\nthe run up to the event.`,
   };
 
   return (
-    <div className={styles.formHeaderTicket}>
-      <h1
-        dangerouslySetInnerHTML={{ __html: mainTextTemplates.ticketedText }}
-      />
-      <p>
-        {isTicketGenerated
-          ? subTextTemplates.ticketedText
-          : subTextTemplates.welcomeText}
-      </p>
+    <div
+      className={
+        attendeeBio.isTicketGenerated
+          ? styles.formHeaderTicket
+          : styles.formHeaderNoTicket
+      }
+    >
+      {attendeeBio.isTicketGenerated ? (
+        <h1
+          dangerouslySetInnerHTML={{ __html: mainTextTemplates.ticketedText }}
+        />
+      ) : (
+        <h1>{mainTextTemplates.welcomeText}</h1>
+      )}
+      {attendeeBio.isTicketGenerated ? (
+        <p
+          dangerouslySetInnerHTML={{ __html: subTextTemplates.ticketedText }}
+        />
+      ) : (
+        <p>{subTextTemplates.welcomeText}</p>
+      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AttendeeBioField from "./AttendeeBioField";
 import UploadAvatar from "./UploadAvatar";
 import styles from "./ticketform.module.css";
@@ -13,6 +13,10 @@ export default function TicketForm() {
     formState: { errors },
   } = useForm();
 
+  useEffect(() => {
+    console.log(attendeeBio);
+  }, [attendeeBio]);
+
   function onSubmit(data) {
     const { fullName, email, github } = data;
     setAttendeeBio({
@@ -20,8 +24,8 @@ export default function TicketForm() {
       name: fullName,
       email: email,
       github: github,
+      isTicketGenerated: true,
     });
-    console.log(attendeeBio);
   }
   return (
     <div id={styles.ticketForm}>

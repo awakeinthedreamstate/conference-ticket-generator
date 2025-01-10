@@ -2,7 +2,7 @@ import { createContext, useReducer, useState } from "react";
 const TicketContext = createContext();
 
 function TicketContextProvider({ children }) {
-  const [attendeeBio, setAttendeeBio] = useState({});
+  const [attendeeBio, setAttendeeBio] = useState({ isTicketGenerated: false });
 
   return (
     <TicketContext.Provider value={{ attendeeBio, setAttendeeBio }}>

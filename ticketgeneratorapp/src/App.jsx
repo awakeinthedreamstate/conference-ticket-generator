@@ -8,7 +8,7 @@ import TicketForm from "./components/TicketForm";
 import TicketCard from "./components/TicketCard";
 
 function App() {
-  const [isTicketGenerated, setIsTicketGenerated] = useState(true);
+  const [isTicketGenerated, setIsTicketGenerated] = useState(false);
 
   return (
     <div className="App">
