@@ -2,7 +2,7 @@ import styles from "./formheader.module.css";
 import { useContext } from "react";
 import { TicketContext } from "../context/TicketContext";
 
-export default function FormHeader({ isTicketGenerated }) {
+export default function FormHeader() {
   const { attendeeBio } = useContext(TicketContext);
   const mainTextTemplates = {
     welcomeText: `Your Journey to Coding Conf\n2025 Starts Here!`,

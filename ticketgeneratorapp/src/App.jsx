@@ -15,8 +15,8 @@ function App() {
       <AppTitle />
       <MainContainer>
         <TicketContextProvider>
-          <FormHeader isTicketGenerated={isTicketGenerated} />
-          <TicketForm />
+          <FormHeader />
+          <TicketCard />
         </TicketContextProvider>
       </MainContainer>
     </div>

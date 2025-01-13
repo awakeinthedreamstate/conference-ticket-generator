@@ -3,8 +3,84 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 65%;
   height: auto;
   align-items: center;
-  margin-top: 13rem;
+  margin-top: 0rem;
+  position: relative;
+}
+.card .cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+.card .cardContent .titleDateVenue {
+  width: 60%;
+  height: 20%;
+  display: grid;
+  grid-template-columns: auto 4fr;
+  grid-template-rows: auto auto;
+  -moz-column-gap: 0.8rem;
+       column-gap: 0.8rem;
+  align-items: center;
+}
+.card .cardContent .titleDateVenue img {
+  width: 2rem;
+  margin-top: 15%;
+}
+.card .cardContent .titleDateVenue span:nth-of-type(1) {
+  font-weight: 600;
+  font-size: 2rem;
+}
+.card .cardContent .titleDateVenue span:nth-of-type(2) {
+  grid-column: 2/2;
+  font-weight: 400;
+  color: hsl(252, 6%, 83%);
+}
+.card .cardContent .attendeeDetails {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "avatar name name" "avatar icon github";
+}
+.card .cardContent .attendeeDetails img:nth-of-type(1) {
+  grid-area: avatar;
+  width: 4.2rem;
+  justify-self: start;
+  align-self: center;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+}
+.card .cardContent .attendeeDetails img:nth-of-type(2) {
+  grid-area: icon;
+  width: 70%;
+  justify-self: start;
+  align-self: center;
+  margin-bottom: 0.2rem;
+}
+.card .cardContent .attendeeDetails span:nth-of-type(1) {
+  grid-area: name;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.card .cardContent .attendeeDetails span:nth-of-type(2) {
+  grid-area: github;
+  font-weight: 400;
+  color: hsl(252, 6%, 83%);
+}
+.card .cardContent .ticketNumber {
+  position: absolute;
+  transform: rotate(90deg);
+  right: 1%;
+  top: calc(50% - 1rem);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: hsl(from hsl(252, 6%, 83%) h s l/60%);
 }/*# sourceMappingURL=ticketcard.module.css.map */
