@@ -6,7 +6,7 @@
   width: 65%;
   height: auto;
   align-items: center;
-  margin-top: 0rem;
+  margin-top: 4.5rem;
   position: relative;
 }
 .card .cardContent {
@@ -19,13 +19,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 0.5rem 0 0.5rem 1rem;
+  padding: 0.5rem 0 0.9rem 0.9rem;
 }
 .card .cardContent .titleDateVenue {
   width: 60%;
   height: 20%;
   display: grid;
-  grid-template-columns: auto 4fr;
+  grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   -moz-column-gap: 0.8rem;
        column-gap: 0.8rem;
@@ -43,16 +43,21 @@
   grid-column: 2/2;
   font-weight: 400;
   color: hsl(252, 6%, 83%);
+  width: auto;
+  margin-right: -0.2rem;
 }
 .card .cardContent .attendeeDetails {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto 1fr 7fr;
   grid-template-rows: auto auto;
   grid-template-areas: "avatar name name" "avatar icon github";
 }
+.card .cardContent .attendeeDetails * {
+  position: relative;
+}
 .card .cardContent .attendeeDetails img:nth-of-type(1) {
   grid-area: avatar;
-  width: 4.2rem;
+  width: 4rem;
   justify-self: start;
   align-self: center;
   margin-right: 0.5rem;
@@ -63,7 +68,7 @@
   width: 70%;
   justify-self: start;
   align-self: center;
-  margin-bottom: 0.2rem;
+  bottom: 0.2rem;
 }
 .card .cardContent .attendeeDetails span:nth-of-type(1) {
   grid-area: name;
@@ -74,13 +79,15 @@
   grid-area: github;
   font-weight: 400;
   color: hsl(252, 6%, 83%);
+  bottom: 0.2rem;
+  left: -0.2rem;
 }
 .card .cardContent .ticketNumber {
   position: absolute;
   transform: rotate(90deg);
-  right: 1%;
+  right: 0%;
   top: calc(50% - 1rem);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 400;
   color: hsl(from hsl(252, 6%, 83%) h s l/60%);
 }/*# sourceMappingURL=ticketcard.module.css.map */

@@ -19,14 +19,20 @@ export default function TicketCard() {
           <span>Jan 31, 2025 / Austin, TX</span>
         </div>
         <div className={styles.attendeeDetails}>
-          {/* <img src={attendeeBio.avatar} alt="attendee avatar" />
+          <img
+            src={
+              (attendeeBio.avatar && attendeeBio.avatar) ||
+              "/assets/images/placeholder-avatar.png"
+            }
+            alt="attendee avatar"
+          />
           <span>{attendeeBio.name}</span>
-          <img src="/assets/images/github.svg" alt="github logo" />
-          <span>{attendeeBio.github}</span> */}
-          <img src="/assets/images/icon-upload.svg" alt="upload icon" />
-          <span>Jonatan Kristof</span>
           <img src="/assets/images/icon-github.svg" alt="github logo" />
-          <span>@jonatankristof0101</span>
+          <span>{attendeeBio.github}</span>
+          {/* <img src="/assets/images/icon-upload.svg" alt="upload icon" />
+          <span>{attendeeBio.name}</span>
+          <img src="/assets/images/icon-github.svg" alt="github logo" />
+          <span>@mainman</span> */}
         </div>
         <div className={styles.ticketNumber}>
           <span>#{randomFiveDigitNumber}</span>
