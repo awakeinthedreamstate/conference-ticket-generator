@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import "./app.css";
 import { TicketContext } from "./context/TicketContext";
 import AppTitle from "./components/AppTitle";
@@ -8,14 +8,21 @@ import TicketForm from "./components/TicketForm";
 import TicketCard from "./components/TicketCard";
 
 function App() {
-  const { attendeeBio } = useContext(TicketContext);
+  const { animationTimer, attendeeBio } = useContext(TicketContext);
+  const [ticketView, setTicketView] = useState(false);
+
+  useEffect(() => {
+    if (attendeeBio.isTicketGenerated) {
+      animationTimer(setTicketView, 1400);
+    }
+  }, [attendeeBio.isTicketGenerated]);
 
   return (
     <div className="App">
       <AppTitle />
       <MainContainer>
         <FormHeader />
-        {attendeeBio.isTicketGenerated ? <TicketCard /> : <TicketForm />}
+        {ticketView ? <TicketCard /> : <TicketForm />}
       </MainContainer>
     </div>
   );

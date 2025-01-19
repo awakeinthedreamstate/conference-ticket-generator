@@ -38,7 +38,7 @@
   white-space: pre-line;
   font-weight: 800;
   width: 100%;
-  animation: headerTween 0.3s linear 0.1s 1 forwards;
+  animation: headerTween 0.3s linear 1 forwards;
 }
 .formHeaderTicket h1 span {
   background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));

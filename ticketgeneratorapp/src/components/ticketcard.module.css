@@ -8,8 +8,24 @@
   align-items: center;
   margin-top: 4.5rem;
   position: relative;
+  opacity: 0;
 }
-.card .cardContent {
+
+.transitioning {
+  animation: cardTransitioning 0.3s ease-out forwards;
+}
+
+@keyframes cardTransitioning {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.cardContent {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,7 +37,7 @@
   height: 100%;
   padding: 0.5rem 0 0.9rem 0.9rem;
 }
-.card .cardContent .titleDateVenue {
+.cardContent .titleDateVenue {
   width: 60%;
   height: 20%;
   display: grid;
@@ -31,58 +47,59 @@
        column-gap: 0.8rem;
   align-items: center;
 }
-.card .cardContent .titleDateVenue img {
+.cardContent .titleDateVenue img {
   width: 2rem;
   margin-top: 15%;
 }
-.card .cardContent .titleDateVenue span:nth-of-type(1) {
+.cardContent .titleDateVenue span:nth-of-type(1) {
   font-weight: 600;
   font-size: 2rem;
 }
-.card .cardContent .titleDateVenue span:nth-of-type(2) {
+.cardContent .titleDateVenue span:nth-of-type(2) {
   grid-column: 2/2;
   font-weight: 400;
   color: hsl(252, 6%, 83%);
   width: auto;
   margin-right: -0.2rem;
 }
-.card .cardContent .attendeeDetails {
+.cardContent .attendeeDetails {
   display: grid;
   grid-template-columns: auto 1fr 7fr;
   grid-template-rows: auto auto;
   grid-template-areas: "avatar name name" "avatar icon github";
 }
-.card .cardContent .attendeeDetails * {
+.cardContent .attendeeDetails * {
   position: relative;
 }
-.card .cardContent .attendeeDetails img:nth-of-type(1) {
+.cardContent .attendeeDetails img:nth-of-type(1) {
   grid-area: avatar;
   width: 4rem;
+  height: 4rem;
   justify-self: start;
   align-self: center;
   margin-right: 0.5rem;
   border-radius: 10px;
 }
-.card .cardContent .attendeeDetails img:nth-of-type(2) {
+.cardContent .attendeeDetails img:nth-of-type(2) {
   grid-area: icon;
   width: 70%;
   justify-self: start;
   align-self: center;
   bottom: 0.2rem;
 }
-.card .cardContent .attendeeDetails span:nth-of-type(1) {
+.cardContent .attendeeDetails span:nth-of-type(1) {
   grid-area: name;
   font-weight: 400;
   font-size: 1.5rem;
 }
-.card .cardContent .attendeeDetails span:nth-of-type(2) {
+.cardContent .attendeeDetails span:nth-of-type(2) {
   grid-area: github;
   font-weight: 400;
   color: hsl(252, 6%, 83%);
   bottom: 0.2rem;
   left: -0.2rem;
 }
-.card .cardContent .ticketNumber {
+.cardContent .ticketNumber {
   position: absolute;
   transform: rotate(90deg);
   right: 0%;
