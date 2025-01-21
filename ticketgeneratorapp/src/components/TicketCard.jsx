@@ -3,23 +3,12 @@ import { TicketContext } from "../context/TicketContext";
 import { useContext, useState, useEffect } from "react";
 
 export default function TicketCard() {
-  const { attendeeBio, animationTimer } = useContext(TicketContext);
-  const [transitioning, setTransitioning] = useState(false);
+  const { attendeeBio } = useContext(TicketContext);
+
   const randomFiveDigitNumber = Math.floor(10000 + Math.random() * 90000);
 
-  useEffect(() => {
-    if (attendeeBio.isTicketGenerated) {
-      animationTimer(setTransitioning, 1300);
-    }
-    console.log("ticket form");
-  }, [attendeeBio.isTicketGenerated]);
-
   return (
-    <div
-      className={
-        transitioning ? `${styles.card} ${styles.transitioning}` : styles.card
-      }
-    >
+    <div className={styles.card}>
       <img
         className={styles.cardBackground}
         src="./assets/images/pattern-ticket.svg"

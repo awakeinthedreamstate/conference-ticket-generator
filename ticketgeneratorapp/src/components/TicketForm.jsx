@@ -6,16 +6,8 @@ import styles from "./ticketform.module.css";
 import { TicketContext } from "../context/TicketContext";
 
 export default function TicketForm() {
-  const { attendeeBio, setAttendeeBio, animationTimer } =
-    useContext(TicketContext);
+  const { attendeeBio, setAttendeeBio } = useContext(TicketContext);
   const [isLoading, setIsLoading] = useState(false);
-  const [transitioning, setTransitioning] = useState(false);
-
-  useEffect(() => {
-    if (attendeeBio.isTicketGenerated) {
-      animationTimer(setTransitioning, 1000);
-    }
-  }, [attendeeBio]);
 
   const {
     register,
@@ -40,13 +32,7 @@ export default function TicketForm() {
   }
 
   return (
-    <div
-      className={
-        transitioning
-          ? `${styles.ticketForm} ${styles.transitioning}`
-          : styles.ticketForm
-      }
-    >
+    <div className={styles.ticketForm}>
       <form id={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <UploadAvatar />
         <AttendeeBioField register={register} errors={errors} />
