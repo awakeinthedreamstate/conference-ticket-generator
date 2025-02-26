@@ -4,6 +4,7 @@ import AttendeeBioField from "./AttendeeBioField";
 import UploadAvatar from "./UploadAvatar";
 import styles from "./ticketform.module.css";
 import { TicketContext } from "../context/TicketContext";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function TicketForm() {
   const { attendeeBio, setAttendeeBio } = useContext(TicketContext);
@@ -32,7 +33,14 @@ export default function TicketForm() {
   }
 
   return (
-    <div className={styles.ticketForm}>
+    <motion.div
+      className={styles.ticketForm}
+      // key="ticket-form"
+      // initial={{ opacity: 0, x: 0 }}
+      // animate={{ opacity: 1, x: 0 }}
+      // exit={{ opacity: 0, x: -50, transition: { delay: 5 } }}
+      // transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <form id={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <UploadAvatar />
         <AttendeeBioField register={register} errors={errors} />
@@ -46,6 +54,6 @@ export default function TicketForm() {
           </button>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 }

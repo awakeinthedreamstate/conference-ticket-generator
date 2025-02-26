@@ -1,6 +1,7 @@
 import styles from "./ticketcard.module.css";
 import { TicketContext } from "../context/TicketContext";
 import { useContext, useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function TicketCard() {
   const { attendeeBio } = useContext(TicketContext);
@@ -8,7 +9,14 @@ export default function TicketCard() {
   const randomFiveDigitNumber = Math.floor(10000 + Math.random() * 90000);
 
   return (
-    <div className={styles.card}>
+    <motion.div
+      className={styles.card}
+      // key="ticket-card"
+      // initial={{ opacity: 0, x: 100 }}
+      // animate={{ opacity: 1, x: 0 }}
+      // exit={{ opacity: 0, x: -50 }}
+      // transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <img
         className={styles.cardBackground}
         src="./assets/images/pattern-ticket.svg"
@@ -40,6 +48,6 @@ export default function TicketCard() {
           <span>#{randomFiveDigitNumber}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
