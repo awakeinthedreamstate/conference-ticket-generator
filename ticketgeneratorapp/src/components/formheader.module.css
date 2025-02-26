@@ -38,7 +38,6 @@
   white-space: pre-line;
   font-weight: 800;
   width: 100%;
-  animation: headerTween 0.3s linear 1 forwards;
 }
 .formHeaderTicket h1 span {
   background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
@@ -50,29 +49,7 @@
   white-space: pre-line;
   font-weight: 450;
   line-height: 1.5rem;
-  animation: subHeaderTween 0.3s linear 0.1s 1 forwards;
 }
 .formHeaderTicket p span {
   color: hsl(7, 71%, 60%);
-}
-
-@keyframes headerTween {
-  0% {
-    transform: translateY(0);
-    font-size: 2.5rem;
-  }
-  100% {
-    transform: translateY(25%);
-    font-size: 3rem;
-  }
-}
-@keyframes subHeaderTween {
-  0% {
-    transform: translateY(0);
-    font-size: 1rem;
-  }
-  100% {
-    transform: translateY(40%);
-    font-size: 1.2rem;
-  }
 }/*# sourceMappingURL=formheader.module.css.map */

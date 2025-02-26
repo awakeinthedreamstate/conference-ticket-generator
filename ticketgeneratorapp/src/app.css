@@ -9,7 +9,7 @@
 body {
   margin: 0;
   color: white;
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
   overflow-x: hidden; /* Prevent horizontal overflow */
   position: relative;
 }
@@ -65,6 +65,12 @@ i {
   justify-content: center;
   font-size: 0.6rem;
   font-weight: 300;
+}
+
+.motionDiv {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 /* 

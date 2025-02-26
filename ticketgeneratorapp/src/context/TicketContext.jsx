@@ -1,19 +1,11 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useState } from "react";
 const TicketContext = createContext();
 
 function TicketContextProvider({ children }) {
   const [attendeeBio, setAttendeeBio] = useState({ isTicketGenerated: false });
-  const animationTimer = (setState, timer) => {
-    setTimeout(() => {
-      setState(true);
-    }, timer);
-    // console.log("timed");
-  };
 
   return (
-    <TicketContext.Provider
-      value={{ attendeeBio, setAttendeeBio, animationTimer }}
-    >
+    <TicketContext.Provider value={{ attendeeBio, setAttendeeBio }}>
       {children}
     </TicketContext.Provider>
   );

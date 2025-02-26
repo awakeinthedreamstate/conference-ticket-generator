@@ -4,18 +4,11 @@ import AttendeeBioField from "./AttendeeBioField";
 import UploadAvatar from "./UploadAvatar";
 import styles from "./ticketform.module.css";
 import { TicketContext } from "../context/TicketContext";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function TicketForm() {
-  const { attendeeBio, setAttendeeBio, animationTimer } =
-    useContext(TicketContext);
+  const { attendeeBio, setAttendeeBio } = useContext(TicketContext);
   const [isLoading, setIsLoading] = useState(false);
-  const [transitioning, setTransitioning] = useState(false);
-
-  useEffect(() => {
-    if (attendeeBio.isTicketGenerated) {
-      animationTimer(setTransitioning, 1000);
-    }
-  }, [attendeeBio]);
 
   const {
     register,
@@ -40,12 +33,13 @@ export default function TicketForm() {
   }
 
   return (
-    <div
-      className={
-        transitioning
-          ? `${styles.ticketForm} ${styles.transitioning}`
-          : styles.ticketForm
-      }
+    <motion.div
+      className={styles.ticketForm}
+      // key="ticket-form"
+      // initial={{ opacity: 0, x: 0 }}
+      // animate={{ opacity: 1, x: 0 }}
+      // exit={{ opacity: 0, x: -50, transition: { delay: 5 } }}
+      // transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <form id={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <UploadAvatar />
@@ -60,6 +54,6 @@ export default function TicketForm() {
           </button>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 }

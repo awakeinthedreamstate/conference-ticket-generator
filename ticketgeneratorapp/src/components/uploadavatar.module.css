@@ -14,7 +14,6 @@
   justify-content: start;
   align-items: center;
   color: inherit;
-  animation: none;
 }
 
 .errorState {
@@ -26,12 +25,10 @@
   font-weight: 300;
   gap: 0.3rem;
   color: none;
-  animation: invalidAvatarAlert 0.5s ease-out;
 }
 .errorState i {
   display: inherit;
   color: inherit;
-  animation: invalidAvatarAlert 0.5s ease-out;
 }
 
 #avatarUploadArea {
@@ -134,13 +131,4 @@
 }
 #avatarUploadArea #yesAvatar button:last-of-type {
   grid-area: button2;
-}
-
-@keyframes invalidAvatarAlert {
-  0% {
-    color: red;
-  }
-  100% {
-    color: white;
-  }
 }/*# sourceMappingURL=uploadavatar.module.css.map */
