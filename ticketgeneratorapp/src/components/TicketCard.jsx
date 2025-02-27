@@ -34,7 +34,7 @@ export default function TicketCard() {
               (attendeeBio.avatar && attendeeBio.avatar) ||
               "/assets/images/placeholder-avatar.png"
             }
-            alt="attendee avatar"
+            alt="attendee photo"
           />
           <span>{attendeeBio.name}</span>
           <img src="/assets/images/icon-github.svg" alt="github logo" />

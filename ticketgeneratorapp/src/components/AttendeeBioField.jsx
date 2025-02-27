@@ -34,23 +34,26 @@ export default function AttendeeBioField({ register, errors }) {
   return (
     <div className={styles.attendeeBio}>
       <div id="fullName" className={styles.field}>
-        <p>Full Name</p>
+        <label htmlFor="name-input">Full Name</label>
         <input
+          id="name-input"
           {...register("fullName", { required: ALERT_MESSAGE.name })}
           type="text"
           className={errors.fullName && styles.invalidInput}
           value="Charlize Theron"
+          aria-describedby="name-alert"
         />
         {errors.fullName && (
           <p className={styles.alert}>
             <i className={styles.icons}>{ICON_SVG}</i>
-            <span>{errors.fullName.message}</span>
+            <span id="name-alert">{errors.fullName.message}</span>
           </p>
         )}
       </div>
       <div id="email" className={styles.field}>
-        <p>Email Address</p>
+        <label htmlFor="email-input">Email Address</label>
         <input
+          id="email-input"
           type="text"
           {...register("email", {
             required: ALERT_MESSAGE.email,
@@ -67,17 +70,19 @@ export default function AttendeeBioField({ register, errors }) {
           value="charlize@mama.com"
           placeholder="example@email.com"
           className={errors.email && styles.invalidInput}
+          aria-describedby="email-alert"
         />
         {errors.email && (
           <p className={styles.alert}>
             <i className={styles.icons}>{ICON_SVG}</i>
-            <span>{errors.email.message}</span>
+            <span id="email-alert">{errors.email.message}</span>
           </p>
         )}
       </div>
       <div id="github" className={styles.field}>
-        <p>Github Username</p>
+        <label htmlFor="github-input">Github Username</label>
         <input
+          id="github-input"
           {...register("github", {
             required: ALERT_MESSAGE.github,
             pattern: { value: /^@.+/, message: "username must start with @" },
@@ -86,11 +91,12 @@ export default function AttendeeBioField({ register, errors }) {
           placeholder="@yourusername"
           className={errors.github && styles.invalidInput}
           value="@charlizeDev"
+          aria-describedby="github-alert"
         />
         {errors.github && (
           <p className={styles.alert}>
             <i className={styles.icons}>{ICON_SVG}</i>
-            <span>{errors.github.message}</span>
+            <span id="github-alert">{errors.github.message}</span>
           </p>
         )}
       </div>

@@ -36,6 +36,9 @@
   background-color: hsl(from hsl(252, 6%, 83%) h s l/15%);
   border-radius: 10px;
 }
+#avatarUploadArea:hover {
+  box-shadow: 0 0 5px 1px white;
+}
 
 #uploadSection {
   display: flex;
@@ -44,7 +47,7 @@
   align-items: start;
   gap: 0.3rem;
 }
-#uploadSection p:first-of-type {
+#uploadSection label {
   font-weight: 500;
   font-size: 0.8rem;
   color: white;

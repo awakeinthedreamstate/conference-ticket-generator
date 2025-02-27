@@ -45,7 +45,7 @@ export default function UploadAvatar() {
 
   return (
     <div id={styles.uploadSection}>
-      <p>Upload Avatar</p>
+      <label aria-label="Upload your photo">Upload Avatar</label>
       <div
         id={styles.avatarUploadArea}
         className={
@@ -59,6 +59,7 @@ export default function UploadAvatar() {
           onChange={handleAvatarUpload}
           style={attendeeBio.avatar ? { zIndex: -1 } : { zIndex: 2 }}
           ref={avatarUploadInputRef}
+          aria-describedby="upload-alert"
         />
         {!attendeeBio.avatar ? (
           <div id={styles.noAvatar}>
@@ -87,7 +88,10 @@ export default function UploadAvatar() {
           </div>
         )}
       </div>
-      <p className={errorState ? styles.errorState : styles.alert}>
+      <p
+        id="upload-alert"
+        className={errorState ? styles.errorState : styles.alert}
+      >
         <i>
           <svg
             xmlns="http://www.w3.org/2000/svg"
