@@ -28,6 +28,7 @@ export default function FormHeader() {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <motion.h1
+            id="welcome-ticket-main"
             aria-label="page header"
             key="ticketed-h1"
             initial={{ fontSize: "2.5rem" }}
@@ -35,6 +36,7 @@ export default function FormHeader() {
             dangerouslySetInnerHTML={{ __html: mainTextTemplates.ticketedText }}
           />
           <motion.p
+            id="welcome-ticket-sub"
             key="ticketed-p"
             initial={{ fontSize: "1rem" }}
             animate={{ fontSize: "1.3rem" }}
