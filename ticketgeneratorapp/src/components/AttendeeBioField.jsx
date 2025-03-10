@@ -40,7 +40,7 @@ export default function AttendeeBioField({ register, errors }) {
           {...register("fullName", { required: ALERT_MESSAGE.name })}
           type="text"
           className={errors.fullName && styles.invalidInput}
-          value="Charlize Theron"
+          // value="Charlize Theron"
           aria-describedby="name-alert"
         />
         {errors.fullName && (
@@ -67,7 +67,7 @@ export default function AttendeeBioField({ register, errors }) {
               return true;
             },
           })}
-          value="charlize@mama.com"
+          // value="charlize@mama.com"
           placeholder="example@email.com"
           className={errors.email && styles.invalidInput}
           aria-describedby="email-alert"
@@ -90,7 +90,7 @@ export default function AttendeeBioField({ register, errors }) {
           type="text"
           placeholder="@yourusername"
           className={errors.github && styles.invalidInput}
-          value="@charlizeDev"
+          // value="@charlizeDev"
           aria-describedby="github-alert"
         />
         {errors.github && (

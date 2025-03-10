@@ -1,4 +1,4 @@
-import { useReducer, useRef, useState, useContext } from "react";
+import { useRef, useState, useContext } from "react";
 import styles from "./uploadavatar.module.css";
 import { TicketContext } from "../context/TicketContext";
 
@@ -14,17 +14,17 @@ export default function UploadAvatar() {
     const avatar = e.target.files[0];
     const reader = new FileReader();
     if (!avatar) {
-      setAttendeeBio(...attendeeBio, { avatar: null });
+      setAttendeeBio({ ...attendeeBio, avatar: null });
       return;
     }
     if (!avatar.type.startsWith("image/")) {
-      setAttendeeBio(...attendeeBio, { avatar: null });
+      setAttendeeBio({ ...attendeeBio, avatar: null });
       setAlertMessage("The uploaded file is not an image.");
       setErrorState(true);
       return;
     }
     if (avatar.size > MAX_FILE_SIZE) {
-      setAttendeeBio(...attendeeBio, { avatar: null });
+      setAttendeeBio({ ...attendeeBio, avatar: null });
       setAlertMessage("File too large. Please upload a photo under 500KB.");
       setErrorState(true);
       return;

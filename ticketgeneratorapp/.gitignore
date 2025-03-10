@@ -33,3 +33,4 @@ style-guide.md
 # SCSS & .map files not needed in remote
 *.scss
 *.css.map
+.vercel
