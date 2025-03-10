@@ -24,8 +24,8 @@ dist-ssr
 *.sw?
 
 # README files not needed till later
-README-template.md
-README.md
+# README-template.md
+# README.md
 
 # Style Guide to be deleted later
 style-guide.md
