@@ -13,22 +13,29 @@ export default function UploadAvatar() {
   function handleAvatarUpload(e) {
     const avatar = e.target.files[0];
     const reader = new FileReader();
+
+    //check if a file was uploaded
     if (!avatar) {
       setAttendeeBio({ ...attendeeBio, avatar: null });
       return;
     }
+
+    //check if the file is an image
     if (!avatar.type.startsWith("image/")) {
       setAttendeeBio({ ...attendeeBio, avatar: null });
       setAlertMessage("The uploaded file is not an image.");
       setErrorState(true);
       return;
     }
+
+    //check if the file size is within limit
     if (avatar.size > MAX_FILE_SIZE) {
       setAttendeeBio({ ...attendeeBio, avatar: null });
       setAlertMessage("File too large. Please upload a photo under 500KB.");
       setErrorState(true);
       return;
     }
+
     reader.onloadend = () => {
       setAttendeeBio({ ...attendeeBio, avatar: reader.result });
     };
@@ -44,7 +51,7 @@ export default function UploadAvatar() {
   }
 
   return (
-    <div id={styles.uploadSection}>
+    <div id={styles.uploadSection} aria-label="File upload section">
       <label aria-label="Upload your photo">Upload Avatar</label>
       <div
         id={styles.avatarUploadArea}
@@ -60,6 +67,7 @@ export default function UploadAvatar() {
           style={attendeeBio.avatar ? { zIndex: -1 } : { zIndex: 2 }}
           ref={avatarUploadInputRef}
           aria-describedby="upload-alert"
+          aria-label="upload-avatar-input"
         />
         {!attendeeBio.avatar ? (
           <div id={styles.noAvatar}>

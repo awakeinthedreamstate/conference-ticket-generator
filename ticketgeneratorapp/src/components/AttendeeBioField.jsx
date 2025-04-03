@@ -42,6 +42,7 @@ export default function AttendeeBioField({ register, errors }) {
           className={errors.fullName && styles.invalidInput}
           // value="Charlize Theron"
           aria-describedby="name-alert"
+          aria-label="full-name"
         />
         {errors.fullName && (
           <p className={styles.alert}>

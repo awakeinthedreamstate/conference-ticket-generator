@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
       <AppTitle />
-      <MainContainer>
-        <FormHeader />
+      <MainContainer role="main">
+        <FormHeader role="form-header" />
         <AnimatePresence mode="wait">
           {attendeeBio.isTicketGenerated ? (
             <motion.div
@@ -25,6 +25,7 @@ function App() {
               animate={{ opacity: 1, x: 0, transition: { delay: 0.8 } }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 5, ease: "easeOut" }}
+              role="ticket"
             >
               <TicketCard />
             </motion.div>
@@ -36,6 +37,7 @@ function App() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50, transition: { delay: 1 } }}
               transition={{ duration: 0.5, ease: "easeOut" }}
+              role="form"
             >
               <TicketForm />
             </motion.div>
